@@ -1,0 +1,19 @@
+﻿@using WebSite.Models.Entity
+@model List<TbDocuments>
+
+<div class="nine columns main-col">
+    @foreach(var x in Model) {
+    <div class="row item">
+
+        <div class="twelve columns">
+
+            <h3>@x.Explanation</h3>
+            <p class="info">Udemy<span>&bull;</span> <em class="date">@x.Date</em></p>
+
+            
+
+        </div>
+
+    </div> <!-- item end -->
+    }
+</div>

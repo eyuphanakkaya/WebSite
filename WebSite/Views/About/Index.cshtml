@@ -1,0 +1,37 @@
+﻿@using WebSite.Models.Entity
+@model List<TbAbout>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Açıklama</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.LastName</td>
+            <td>@item.Adress</td>
+            <td>@item.Phone</td>
+            <td>@item.Mail</td>
+            <td>@item.Explanation</td>
+        </tr>
+    }
+
+
+
+
+
+</table>
+<a href="/About/UpdateAbout/" class="btn btn-danger">Güncelle</a>
+

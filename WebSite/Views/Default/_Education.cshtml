@@ -1,0 +1,20 @@
+﻿@using WebSite.Models.Entity
+@model List<TbTrainings>
+<div class="nine columns main-col">
+
+    <div class="row item">
+    @foreach(var x in Model) {
+        <div class="twelve columns">
+
+            <h3>@x.Title</h3>
+            <p class="info">@x.Subtitle2<span>&bull;</span> <em class="date">@x.Date</em></p>
+
+            <p>
+               @x.Subtitle1
+                Gno:@x.AVG
+            </p>
+
+        </div>
+    }
+    </div> <!-- item end -->
+</div>

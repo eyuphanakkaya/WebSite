@@ -1,0 +1,12 @@
+﻿@using WebSite.Models.Entity
+@model List<TbAbout>
+<div class="widget widget_contact">
+    @foreach(var x in Model) {
+    <h4>Adres Ve Telefon</h4>
+    <p class="address">
+       @x.Adress<br>
+        <br>
+        <span>@x.Phone</span>
+    </p>
+    }
+</div>

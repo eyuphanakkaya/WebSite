@@ -1,0 +1,29 @@
+﻿@using WebSite.Models.Entity
+@model List<TbTrainings>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Başlık</th>
+        <th>Altbaşlık1</th>
+        <th>Altbaşlık2</th>
+        <th>Ortalama</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Subtitle1</td>
+            <td>@item.Subtitle2</td>
+            <td>@item.AVG</td>
+            <td>@item.Date</td>
+            <td<a href="/Training/DeleteTrain/">Sil</a>></td>
+            <td><a href="/Training/UpdateTrain/">Güncelle</a></td>
+        </tr>
+    }
+</table>

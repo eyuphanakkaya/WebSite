@@ -1,0 +1,310 @@
+﻿@using WebSite.Models.Entity
+@model List<TbAbout>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Eyüphan Akkaya</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="/bootstrap/css/default.css">
+    <link rel="stylesheet" href="/bootstrap/css/layout.css">
+    <link rel="stylesheet" href="/bootstrap/css/media-queries.css">
+    <link rel="stylesheet" href="/bootstrap/css/magnific-popup.css">
+
+    <!-- Script
+    ================================================== -->
+    <script src="/bootstrap/js/modernizr.js"></script>
+
+    <!-- Favicons
+     ================================================== -->
+    <link rel="shortcut icon" href="/bootstrap/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Header
+    ================================================== -->
+    <header id="home">
+
+        <nav id="nav-wrap">
+
+            <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+            <ul id="nav" class="nav">
+                <li class="current"><a class="smoothscroll" href="#home">Anasayfa</a></li>
+                <li><a class="smoothscroll" href="#about">Hakkımda</a></li>
+                <li><a class="smoothscroll" href="#resume">Eğitimlerim</a></li>
+                <li><a class="smoothscroll" href="#portfolio">Hobilerim</a></li>
+                <li><a class="smoothscroll" href="#testimonials">Hayat Felsefem</a></li>
+                <li><a class="smoothscroll" href="#contact">İletişim</a></li>
+            </ul> <!-- end #nav -->
+
+        </nav> <!-- end #nav-wrap -->
+
+        <div class="row banner">
+            <div class="banner-text">
+
+                <h1 class="responsive-headline">Eyüphan Akkaya.</h1>
+                <h3>
+                    slm@*<a class="smoothscroll" href="#about">start scrolling</a>
+                        and learn more <a class="smoothscroll" href="#about">about me</a>.*@
+                </h3>
+                <hr />
+                <ul class="social">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="scrolldown">
+            <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+        </p>
+
+    </header> <!-- Header End -->
+    <!-- About Section
+    ================================================== -->
+    <section id="about">
+
+        <div class="row">
+            @foreach (var x in Model)
+            {
+                <div class="three columns">
+
+                    <img class="profile-pic" src="/bootstrap/images/profilepic.jpg" alt="" />
+
+                </div>
+
+                <div class="nine columns main-col">
+
+                    <h2>Benim Hakkımda</h2>
+
+                    <p>
+                        @x.Explanation
+                    </p>
+
+                    <div class="row">
+
+                        <div class="columns contact-details">
+
+                            <h2>İletişim Detayları</h2>
+                            <p class="address">
+                                <span>@x.Name @x.LastName</span><br>
+                                <span>
+                                    @x.Adress<br>
+
+                                </span><br>
+                                <span>@x.Phone</span><br>
+                                <span>@x.Mail</span>
+                            </p>
+
+                        </div>
+
+                        <div class="columns download">
+                            <p>
+                                <a href="file:///C:/Users/Ey%C3%BCphan%20Akkaya/Desktop/EyuphanAkkayacv.pdf" class="button"><i class="fa fa-download"></i>Detaylı Cv Icin Tiklayınız</a>
+                            </p>
+                        </div>
+
+                    </div> <!-- end row -->
+
+                </div> <!-- end .main-col -->
+            }
+        </div>
+
+    </section> <!-- About Section End-->
+    <!-- Resume Section
+    ================================================== -->
+    <section id="resume">
+
+        <!-- Education
+        ----------------------------------------------- -->
+        <div class="row education">
+
+            <div class="three columns header-col">
+                <h1><span>Egitim</span></h1>
+            </div>
+            @Html.Action("_Education")
+            <!-- main-col end -->
+
+        </div> <!-- End Education -->
+        <!-- Work
+        ----------------------------------------------- -->
+        <div class="row work">
+
+            <div class="three columns header-col">
+                <h1><span>Sertifiklarım</span></h1>
+            </div>
+            @Html.Action("_Document")
+            <!-- main-col end -->
+
+        </div> <!-- End Work -->
+        <!-- Skills
+        ----------------------------------------------- -->
+        <div class="row skill">
+
+            <div class="three columns header-col">
+                <h1><span>Yeteneklerim</span></h1>
+            </div>
+            @Html.Action("_Talent")
+            <!-- main-col end -->
+
+        </div> <!-- End skills -->
+
+    </section> <!-- Resume Section End-->
+    <!-- Portfolio Section
+    ================================================== -->
+    <section id="portfolio">
+
+        @Html.Action("_Hobbies")
+
+    </section> <!-- Portfolio Section End-->
+    <!-- Call-To-Action Section
+    ================================================== -->
+    <section id="call-to-action">
+
+        <div class="row">
+
+            <div class="two columns header-col">
+
+                <h1><span>Get Hosting.</span></h1>
+
+            </div>
+
+            <div class="seven columns">
+
+                <h2><span class="lead">Unde Omnis Iste</span></h2>
+                <p>
+                    <span class="lead">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="three columns action">
+
+
+
+            </div>
+
+        </div>
+
+    </section> <!-- Call-To-Action Section End-->
+    <!-- Testimonials Section
+    ================================================== -->
+    <section id="testimonials">
+
+        <div class="text-container">
+
+            <div class="row">
+
+                <div class="two columns header-col">
+
+                    <h1><span>Client Testimonials</span></h1>
+
+                </div>
+
+                <div class="ten columns flex-container">
+
+                    <div class="flexslider">
+
+                        <ul class="slides">
+
+                            <li>
+                                <blockquote>
+                                    <p>
+                                        Your work is going to fill a large part of your life, and the only way to be truly satisfied is
+                                        to do what you believe is great work. And the only way to do great work is to love what you do.
+                                        If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                                    </p>
+                                    <cite>Steve Jobs</cite>
+                                </blockquote>
+                            </li> <!-- slide ends -->
+
+                            <li>
+                                <blockquote>
+                                    <p>
+                                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                                    </p>
+                                    <cite>Mr. Adobe</cite>
+                                </blockquote>
+                            </li> <!-- slide ends -->
+
+                        </ul>
+
+                    </div> <!-- div.flexslider ends -->
+
+                </div> <!-- div.flex-container ends -->
+
+            </div> <!-- row ends -->
+
+        </div>  <!-- text-container ends -->
+
+    </section> <!-- Testimonials Section End-->
+    <!-- Contact Section
+    ================================================== -->
+    <section id="contact">
+
+        <div class="row section-head">
+
+            <div class="two columns header-col">
+
+                <h1><span>Get In Touch.</span></h1>
+
+            </div>
+
+
+
+        </div>
+
+        @Html.Action("_Contact")
+
+    </section> <!-- Contact Section End-->
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        @*@Html.Action("_Social")*@
+    </footer>
+    <!-- Footer End-->
+    <!-- Java Script
+    ================================================== -->
+    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>*@
+    <script>window.jQuery || document.write('<script src="/bootstrap/js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/bootstrap/js/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="/bootstrap/js/jquery.flexslider.js"></script>
+    <script src="/bootstrap/js/waypoints.js"></script>
+    <script src="/bootstrap/js/jquery.fittext.js"></script>
+    <script src="/bootstrap/js/magnific-popup.js"></script>
+    <script src="/bootstrap/js/init.js"></script>
+
+</body>
+
+</html>

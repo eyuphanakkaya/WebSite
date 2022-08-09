@@ -1,0 +1,25 @@
+﻿@using WebSite.Models.Entity
+@model List<TbTalents>
+<div class="nine columns main-col">
+
+    <p>
+        Ama zevki suçlayıp acıyı övenlerin bütün bu doğuştan gelen yanılgılarının nereden kaynaklandığını görmeniz için, bütün meseleyi açacağım.
+        ve bu gerçeği keşfeden ve adeta mutlu bir yaşamın mimarı tarafından söylenenleri açıklayacağım. Onu kimse tanımadığı için
+        zevk, çünkü hor görür, nefret eder ya da kaçar, ama akıl yürütenleri büyük acılar takip eder.
+        zevk peşinde koşmayı bilmiyorlar.
+    </p>
+
+    <div class="bars">
+    @foreach(var x in Model) {
+        <ul class="skills">
+            <li><span class="@x.degree"></span><em>@x.Talent</em></li>
+            @*<li><span class="bar-expand illustrator"></span><em>Illustrator</em></li>
+            <li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
+            <li><span class="bar-expand css"></span><em>CSS</em></li>
+            <li><span class="bar-expand html5"></span><em>HTML5</em></li>
+            <li><span class="bar-expand jquery"></span><em>jQuery</em></li>*@
+        </ul>
+    }
+    </div><!-- end skill-bars -->
+
+</div>
