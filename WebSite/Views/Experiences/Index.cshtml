@@ -1,0 +1,31 @@
+﻿@using WebSite.Models.Entity
+@model List<TbExperiences>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Altbaşlık</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.Subtitle</td>
+            <td>@item.Explanation</td>
+            <td>@item.Date</td>
+            <td><a href="/Experiences/DeleteExp/@item.Id">Sil</a></td>
+            <td><a href="/Experiences/UpdateExp/@item.Id">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Experiences/AddExp/">Yeni Deneyim Ekle</a>

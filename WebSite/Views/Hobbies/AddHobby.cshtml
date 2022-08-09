@@ -1,0 +1,22 @@
+﻿@model WebSite.Models.Entity.TbHobbies
+@{
+    ViewBag.Title = "AddHobby";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post" class="form-control">
+    <label>Açıklama1</label>
+    @Html.TextBoxFor(x => x.Explanation1, new { @class = "form-control" })
+    <br />
+    <label>Açıklama2</label>
+    @Html.TextBoxFor(x => x.Explanation2, new { @class = "form-control" })
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-dark">Ekle</button>
+</form>
+

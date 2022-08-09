@@ -7,23 +7,28 @@
 
 <table class="table table-bordered">
     <tr>
+        <th>Id</th>
         <th>Başlık</th>
         <th>Altbaşlık1</th>
         <th>Altbaşlık2</th>
         <th>Ortalama</th>
         <th>Tarih</th>
         <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.Id</td>
             <td>@item.Title</td>
             <td>@item.Subtitle1</td>
             <td>@item.Subtitle2</td>
             <td>@item.AVG</td>
             <td>@item.Date</td>
-            <td<a href="/Training/DeleteTrain/">Sil</a>></td>
-            <td><a href="/Training/UpdateTrain/">Güncelle</a></td>
+            <td><a href="/Training/DeleteTrain/@item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Training/UpdateTrain/@item.Id" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
+
 </table>
+<a href="/Training/AddTrain/" class="btn btn-info">Yeni Yetenek Ekle</a>

@@ -1,0 +1,25 @@
+﻿@model WebSite.Models.Entity.TbTrainings
+@{
+    ViewBag.Title = "UpdateTrain";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post" class="form-control">
+    <label>Başlık</label>
+    @Html.TextBoxFor(x=>x.Title,new {@class="form-control"})
+    <br />
+    <label>Altbaşlık1</label>
+    @Html.TextBoxFor(x=>x.Subtitle1,new {@class="form-control"})
+    <br />
+    <label>Altbaşlık2</label>
+    @Html.TextBoxFor(x=>x.Subtitle2,new {@class="form-control"})
+    <br />
+    <label>Ortalama</label>
+    @Html.TextBoxFor(x=>x.AVG,new {@class="form-control"})
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x=>x.Date,new {@class="form-control"})
+
+    <button class="btn btn-dark">Güncelle</button>
+</form>
+

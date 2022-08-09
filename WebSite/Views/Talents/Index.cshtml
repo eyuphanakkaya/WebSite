@@ -1,0 +1,31 @@
+﻿@using WebSite.Models.Entity
+@model List<TbTalents>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yetenek</th>
+        <th>Oran</th>
+        <th>Derece</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Talent</td>
+            <td>@item.Ratio</td>
+            <td>@item.degree</td>
+            <td><a href="/Talents/DeleteTalent/@item.Id">Sil</a></td>
+            <td><a href="/Talents/UpdateTalent/@item.Id">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Talents/AddTalent/" class="btn btn-info">Yeni Yetenek Ekle</a>
+
+

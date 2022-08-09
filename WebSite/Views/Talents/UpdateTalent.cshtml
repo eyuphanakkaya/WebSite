@@ -1,0 +1,21 @@
+﻿@model WebSite.Models.Entity.TbTalents
+@{
+    ViewBag.Title = "UpdateTalent";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post" class="form-control">
+    <label>Yetenek</label>
+    @Html.TextBoxFor(x => x.Talent, new { @class = "form-control" })
+    <br />
+    <label>Oran</label>
+    @Html.TextBoxFor(x => x.Ratio, new { @class = "form-control" })
+    <br />
+    <label>Derece</label>
+    @Html.TextBoxFor(x => x.degree, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-dark">Düzenle</button>
+</form>

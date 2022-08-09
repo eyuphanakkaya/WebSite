@@ -1,0 +1,30 @@
+﻿@using WebSite.Models.Entity
+@model List<TbHobbies>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Açıklama1</th>
+        <th>Açıklama2</th>
+        <th>Resim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Explanation1</td>
+            <td>@item.Explanation2</td>
+            <td>@item.Photo</td>
+            <td><a href="/Hobbies/DeleteHobby/@item.Id">Sil</a></td>
+            <td><a href="/Hobbies/UpdateHobby/@item.Id">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Hobbies/AddHobby/" class="btn btn-info">Yeni Hobi Ekle</a>
+

@@ -1,0 +1,28 @@
+﻿@using WebSite.Models.Entity;
+@model List<TbDocuments> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Explanation</td>
+            <td>@item.Date</td>
+            <td><a href="/Documents/DeleteDoc/@item.Id">Sil</a></td>
+            <td><a href="/Documents/UpdateDoc/@item.Id">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Documents/AddDoc/">Yeni Sertifika Ekle</a>
+
